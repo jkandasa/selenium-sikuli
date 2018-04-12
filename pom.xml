@@ -1,0 +1,100 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>org.redhat.qe</groupId>
+  <artifactId>selenium-sikuli-parent</artifactId>
+  <version>1</version>
+  <packaging>pom</packaging>
+
+  <name>selenium-sikuli</name>
+  <inceptionYear>2018</inceptionYear>
+  <url>https://github.com/jkandasa/selenium-sikuli</url>
+
+
+  <scm>
+    <url>https://github.com/jkandasa/selenium-sikuli</url>
+    <connection>scm:git:https://github.com/jkandasa/selenium-sikuli</connection>
+    <developerConnection>scm:git:git@github.com:jkandasa/selenium-sikuli.git</developerConnection>
+    <tag>HEAD</tag>
+  </scm>
+
+  <licenses>
+    <license>
+      <name>Apache License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+
+  <properties>
+    <!-- Maven general -->
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <autoVersionSubmodules>true</autoVersionSubmodules>
+
+    <!-- maven-compiler-plugin -->
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    <maven.compiler.showWarnings>true</maven.compiler.showWarnings>
+
+    <!-- Maven plugin versions -->
+    <version.maven-shade-plugin>3.1.1</version.maven-shade-plugin>
+
+    <!-- dependency versions -->
+    <version.seleniumhq>3.11.0</version.seleniumhq>
+    <version.slf4j>1.7.25</version.slf4j>
+    <version.sterodium-rmi>0.3</version.sterodium-rmi>
+    <version.sikuli>1.2.0</version.sikuli>
+    <version.bytedeco>2.4.10-0.10</version.bytedeco>
+    <version.junit>3.8.1</version.junit>
+
+  </properties>
+
+  <modules>
+    <module>common</module>
+    <module>grid</module>
+    <module>node</module>
+    <module>client</module>
+  </modules>
+
+  <dependencies>
+
+    <dependency>
+      <groupId>org.seleniumhq.selenium</groupId>
+      <artifactId>selenium-server</artifactId>
+      <version>${version.seleniumhq}</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <!-- Logger -->
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>${version.slf4j}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>io.sterodium</groupId>
+      <artifactId>sterodium-rmi</artifactId>
+      <version>${version.sterodium-rmi}</version>
+    </dependency>
+
+    <!--Sikuli -->
+    <dependency>
+      <groupId>org.sikuli</groupId>
+      <artifactId>sikuli-api</artifactId>
+      <version>${version.sikuli}</version>
+    </dependency>
+
+    <!-- Junit -->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>${version.junit}</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+
+</project>

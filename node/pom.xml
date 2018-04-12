@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+  xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.redhat.qe</groupId>
+    <artifactId>selenium-sikuli-parent</artifactId>
+    <version>1</version>
+  </parent>
+
+  <artifactId>selenium-sikuli-node</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+
+  <name>selenium-sikuli-node</name>
+
+  <dependencies>
+    <!-- Internal dependency -->
+    <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>selenium-sikuli-common</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+
+    <!-- Open CV -->
+    <dependency>
+      <groupId>org.bytedeco.javacpp-presets</groupId>
+      <artifactId>opencv</artifactId>
+      <version>${version.bytedeco}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.bytedeco.javacpp-presets</groupId>
+      <artifactId>opencv</artifactId>
+      <version>${version.bytedeco}</version>
+      <classifier>linux-x86_64</classifier>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-shade-plugin</artifactId>
+        <version>${version.maven-shade-plugin}</version>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>shade</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+
+
+</project>
